@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teachers' Links</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fff8ec;
+    --bg-2: #ffeccf;
+    --ink: #1f2a44;
+    --muted: #5d6a85;
+    --card: #ffffff;
+    --accent: #2563eb;
+    --accent-dark: #1d4ed8;
+    --accent-soft: #dbe7ff;
+    --border: #f1dfc0;
+    --shadow: 0 6px 0 rgba(37, 99, 235, .12), 0 10px 24px rgba(31, 42, 68, .08);
+    --c1: #ffe1e1; --c2: #ffefc2; --c3: #d9f5e3; --c4: #e3dcff; --c5: #d6ecff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1a2b; --bg-2: #25223a; --ink: #f4f1ff; --muted: #b3acd0;
+      --card: #2b2842; --accent: #6ea0ff; --accent-dark: #8fb6ff; --accent-soft: #34406b;
+      --border: #3a3658; --shadow: 0 6px 0 rgba(110,160,255,.15), 0 10px 24px rgba(0,0,0,.35);
+      --c1: #4a2f3d; --c2: #4a4030; --c3: #2d4a3d; --c4: #3b3560; --c5: #2d4260;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 12% 8%, var(--bg-2) 0 120px, transparent 121px),
+      radial-gradient(circle at 92% 22%, var(--accent-soft) 0 90px, transparent 91px),
+      radial-gradient(circle at 8% 78%, var(--accent-soft) 0 70px, transparent 71px),
+      var(--bg);
+    background-attachment: fixed;
+    min-height: 100vh;
+    line-height: 1.45;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 40px 16px 56px; }
+
+  header { text-align: center; margin-bottom: 28px; }
+  .avatar {
+    width: 96px; height: 96px; border-radius: 50%;
+    margin: 0 auto 14px; display: grid; place-items: center;
+    background: var(--accent); color: #fff; font-size: 44px;
+    box-shadow: 0 6px 0 var(--accent-dark), 0 12px 24px rgba(37,99,235,.25);
+    transform: rotate(-4deg);
+  }
+  h1 { margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -.01em; }
+  .handle { margin: 4px 0 0; color: var(--muted); font-weight: 500; }
+
+  .hero {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--accent); color: #fff; text-decoration: none;
+    padding: 16px 20px; border-radius: 20px; font-weight: 700; font-size: 17px;
+    box-shadow: 0 6px 0 var(--accent-dark), 0 14px 26px rgba(37,99,235,.25);
+    transition: transform .12s ease, box-shadow .12s ease;
+    margin-bottom: 8px;
+  }
+  .hero:hover { transform: translateY(2px); box-shadow: 0 4px 0 var(--accent-dark), 0 10px 20px rgba(37,99,235,.22); }
+
+  section { margin-top: 30px; }
+  h2 {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin: 0 0 12px; padding: 6px 14px; font-size: 13px; font-weight: 800;
+    letter-spacing: .08em; text-transform: uppercase;
+    background: var(--accent-soft); color: var(--accent); border-radius: 999px;
+  }
+  .links { display: grid; gap: 12px; }
+  .link {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px; background: var(--card); color: var(--ink);
+    text-decoration: none; border: 2px solid var(--border); border-radius: 18px;
+    box-shadow: var(--shadow);
+    transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+  }
+  .link:hover, .link:focus-visible {
+    transform: translateY(-2px); border-color: var(--accent); outline: none;
+  }
+  .link:focus-visible { box-shadow: 0 0 0 4px var(--accent-soft); }
+  .icon {
+    flex: none; width: 46px; height: 46px; border-radius: 14px;
+    display: grid; place-items: center; font-size: 24px; background: var(--c5);
+  }
+  .c1 .icon { background: var(--c1); } .c2 .icon { background: var(--c2); }
+  .c3 .icon { background: var(--c3); } .c4 .icon { background: var(--c4); }
+  .text { flex: 1; min-width: 0; }
+  .title { font-weight: 700; font-size: 16px; }
+  .sub { color: var(--muted); font-size: 13px; margin-top: 1px; }
+  .arrow { flex: none; color: var(--accent); font-size: 20px; font-weight: 700; }
+
+  footer { margin-top: 40px; text-align: center; color: var(--muted); font-size: 12.5px; }
+  footer p { margin: 4px 0; }
+
+  @media (max-width: 380px) {
+    .title { font-size: 15px; }
+    .icon { width: 40px; height: 40px; font-size: 21px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <div class="avatar" aria-hidden="true">🍎</div>
+    <h1>Teachers' Links</h1>
+    <p class="handle">Resources &amp; administration, all in one place</p>
+  </header>
+
+  <a class="hero" href="https://digital.lia.co.id/" target="_blank" rel="noopener noreferrer">
+    <span aria-hidden="true">🌐</span> Visit LIA Digital
+  </a>
+
+  <section>
+    <h2>📚 Teaching Resources</h2>
+    <div class="links">
+      <a class="link c1" href="https://drive.google.com/drive/u/1/folders/10QqS9L4HMWCEyZOxMuygIq0wvPje1kKJ" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">📖</span>
+        <span class="text"><span class="title">Digital Books</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link c2" href="https://drive.google.com/drive/u/0/folders/1_GBzHVZe5CAZVQxYitCppp-fSi3cyUXT" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🔄</span>
+        <span class="text"><span class="title">Flipped Materials</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link c3" href="https://drive.google.com/drive/u/2/folders/1E0YmUmoVPvDMYKUhuLsKWJTH15fa2rJm" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🧒</span>
+        <span class="text"><span class="title">GEYL Resources</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link c4" href="https://drive.google.com/drive/folders/1Z_s5LdGxe0HWcFVLkuwBeWP9p2F29PGu?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🗂️</span>
+        <span class="text"><span class="title">Other Resources</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>🗓️ Administration</h2>
+    <div class="links">
+      <a class="link c1" href="https://s.id/timetable37" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">⏰</span>
+        <span class="text"><span class="title">Timetable and Distribution</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link c2" href="https://s.id/liadepokaccal" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">📅</span>
+        <span class="text"><span class="title">Academic Calendar</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link c3" href="https://docs.google.com/spreadsheets/d/1Zuomn1V8cLA02q2_gJkGAcktIVQ9qyPM/edit#gid=184461568" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">📊</span>
+        <span class="text"><span class="title">SAR Feedback</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link c4" href="https://drive.google.com/drive/u/0/folders/1ffArCTXQDHGm3ozSON_fTLvksXMRXAZF" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🏷️</span>
+        <span class="text"><span class="title">Price List and Brochure</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>📝 Templates</h2>
+    <div class="links">
+      <a class="link c1" href="https://drive.google.com/drive/folders/1AhR4qOgHl6mOSFr1wujAlGVPvDH73hWE?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">📄</span>
+        <span class="text"><span class="title">GEYL - PRC/PRS</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>✨ Others</h2>
+    <div class="links">
+      <a class="link c2" href="https://drive.google.com/file/d/1-5ACQbDBNGPENRlbX8JeL-N3_xnBlh6x/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🧭</span>
+        <span class="text"><span class="title">LIA Digital For Teachers - Guideline</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link c3" href="https://s.id/lbliadepok" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🖥️</span>
+        <span class="text">
+          <span class="title">Local Server</span>
+          <span class="sub" style="display:block">Can only be accessed in LIA Depok</span>
+        </span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link c4" href="https://sites.google.com/view/liadepokonline/upload-zone?authuser=0" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">📤</span>
+        <span class="text">
+          <span class="title">Upload Zone</span>
+          <span class="sub" style="display:block">Report Card Submission</span>
+        </span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link c1" href="https://sites.google.com/view/liadepokonline/tutorials?authuser=0" target="_blank" rel="noopener noreferrer">
+        <span class="icon" aria-hidden="true">🎓</span>
+        <span class="text"><span class="title">Tutorials</span></span>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Unofficial link collection. Links go to their original destinations.</p>
+  </footer>
+</main>
+</body>
+</html>
